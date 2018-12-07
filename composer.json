@@ -1,0 +1,23 @@
+{
+  "name": "jmau/jm-twitter-cards-refresh-image",
+  "keywords": [
+    "WordPress",
+    "twitter",
+    "cards",
+    "meta"
+  ],
+  "homepage": "https://github.com/jmau111/jm-twitter-cards-refresh-image",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "jmau111",
+      "email": "contact@julien-maury.com"
+    }
+  ],
+  "type": "wordpress-plugin",
+  "description": "When Twitter fetches Twitter image it keeps it in cache, so this plugin filters JM Twitter Cards to add a query string to force cache busting.",
+  "require": {
+    "composer/installers": "~1.0",
+    "php": ">=5.4.0"
+  }
+}

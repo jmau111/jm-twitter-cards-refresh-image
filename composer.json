@@ -11,13 +11,12 @@
   "authors": [
     {
       "name": "jmau111",
-      "email": "contact@julien-maury.com"
+      "email": "https://blog.julien-maury.com/en/contact"
     }
   ],
   "type": "wordpress-plugin",
   "description": "When Twitter fetches Twitter image it keeps it in cache, so this plugin filters JM Twitter Cards to add a query string to force cache busting.",
   "require": {
-    "composer/installers": "~1.0",
     "php": ">=5.4.0"
   }
 }

@@ -32,6 +32,10 @@ defined( 'ABSPATH' )
 add_filter( 'jm_tc_image_source', 'jm_tc_refresh_image' );
 function jm_tc_refresh_image( $image ) {
 
+	if ( empty($image ) ) {
+		return false;
+	}
+
 	$params = (array) apply_filters( 'jm_tc_refresh_image_query_string_params', [ 'tc' => strtotime( 'now' ) ], $image );
 
 	return add_query_arg( $params, $image );

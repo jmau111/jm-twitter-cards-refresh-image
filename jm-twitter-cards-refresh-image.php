@@ -5,7 +5,7 @@ Plugin URI: https://julien-maury.dev
 Description: this plugin filters JM Twitter Cards to add a query string to force cache busting on image meta.
 Author: Julien Maury
 Author URI: https://julien-maury.dev
-Version: 1.1
+Version: 1.2
 License: GPL2++
 
 JM Twitter Cards Plugin
@@ -26,17 +26,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 // Add some security, no direct load !
-defined( 'ABSPATH' )
-	or die( 'No direct load !' );
+defined('ABSPATH')
+    or die('No direct load !');
 
-add_filter( 'jm_tc_image_source', 'jm_tc_refresh_image' );
-function jm_tc_refresh_image( $image ) {
+add_filter('jm_tc_image_source', 'jm_tc_refresh_image');
+function jm_tc_refresh_image($image)
+{
 
-	if ( empty($image ) ) {
-		return false;
-	}
+    if (empty($image)) {
+        return false;
+    }
 
-	$params = (array) apply_filters( 'jm_tc_refresh_image_query_string_params', [ 'tc' => strtotime( 'now' ) ], $image );
+    $params = (array) apply_filters('jm_tc_refresh_image_query_string_params', ['tc' => strtotime('now')], $image);
 
-	return add_query_arg( $params, $image );
+    return add_query_arg($params, $image);
 }
